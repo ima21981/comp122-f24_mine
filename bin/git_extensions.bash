@@ -6,6 +6,10 @@ alias git="my_git "
 function my_git () {
 
     case "$1" in 
+      clone)
+        my_git_clone "$@"
+        ;;
+
       safe-to-switch)
         git-safe-to-switch
         ;;
@@ -23,6 +27,20 @@ function my_git () {
         'git' "$@"
         ;;
     esac
+}
+
+function my_git_clone () {
+  local _URL="$2"
+  local _dir="$3"
+
+  'git' 'clone' "$_URL" $_dir
+
+  [[ -z "$_dir" ]] && _dir=$(basename -s .git $_URL)
+  touch $_dir/.assignment_accepted
+  git -C $_dir add .assignment_accepted
+  git -C $_dir commit -m "Assignment Accepted" 
+  git -C $_dir push
+
 }
 
 function git-pull-request () {
