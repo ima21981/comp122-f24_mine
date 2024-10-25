@@ -1,4 +1,4 @@
-l# COMP122 Lecture Notes: October 2, 2024
+# COMP122 Lecture Notes: October 2, 2024
 
 ## Announcements:
   1. Oct 8 (Tuesday) 
@@ -41,86 +41,86 @@ l# COMP122 Lecture Notes: October 2, 2024
 # Today's Lab Material
   1. BCD Example
     
+     * Exercise Template 
+       ```response
+         c  cccC     c  cccc    # Carries           
+            xxxx        xxxx    # Augend            
+        +   xxxx        xxxx    # Addend            
+        --  ----        ----                        
+            xxxx        xxxx    # I.Sum  >--------  
+                                                 |  
+         C  cccc     C  cccc    # Carries        |  
+            xxxx        xxxx    # I.Sum  <--------  
+        +   0xx0        0xx0    # Fix?              
+        --  ----        ----                        
+         C  xxxx        xxxx                        
+
+       ```
     
-    ```response
-       c  cccC     c  cccc    # Carries           
-          xxxx        xxxx    # Augend            
-      +   xxxx        xxxx    # Addend            
-      --  ----        ----                        
-          xxxx        xxxx    # I.Sum  >--------  
-                                               |  
-       C  cccc     C  cccc    # Carries        |  
-          xxxx        xxxx    # I.Sum  <--------  
-      +   0xx0        0xx0    # Fix?              
-      --  ----        ----                        
-       C  xxxx        xxxx                        
+     * 23 + 88 
+       ```
+           23
+           88
+       + -----
+         111
+       ```    
 
-    ```
-   
-    * 23 + 88 
-    ```
-        23
-        88
-    + -----
-       111
+       ```response
+         0  0001     0  0000    # Carries           
+            0010        0011    # Augend            
+        +   1000        1000    # Addend            
+        --  ----        ----                        
+            1011        1011    # I.Sum  >--------  
+                                                 |  
+         1  1100     1  1100    # Carries        |  
+            1011        1011    # I.Sum  <--------  
+        +   0110        0110    # Fix?              
+        --  ----        ----                        
+         1  0001        0001                        
+
+
+       Binary Answer: 0001  0001 0001
+       Decimal Ansewr: 111
+       ```
     
-    ```    
-    ```response
-       0  0001    0  0000    # Carries           
-          0010        0011    # Augend            
-      +   1000        1000    # Addend            
-      --  ----        ----                        
-          1011        1011    # I.Sum  >--------  
-                                               |  
-       1  1100     1  1100    # Carries        |  
-          1011        1011    # I.Sum  <--------  
-      +   0110        0110    # Fix?              
-      --  ----        ----                        
-       1  0001        0001                        
 
+     * 23 + 17 = 40
+       ```response
+          0  0111     0  1110    # Carries           
+             0010        0011    # Augend            
+         +   0001        0111    # Addend            
+         --  ----        ----                        
+             0100        1010    # I.Sum  >--------  
+                                                  |  
+          0  0000     1  1100    # Carries        |  
+             0100        1010    # I.Sum  <--------  
+         +   0000        0110    # Fix?              
+         --  ----        ----                        
+          0  0100        0000                        
+        0 40
+       ```
+  
+     * 45 + 27 = 72
+       ```
+          45
+       +  27
+       ```
 
-    0001  0001 0001
-    1 1 1
-    ```
-   
-
-    * 23 + 17 = 40
-
-    ```response
-       0  0111     0  1110    # Carries           
-          0010        0011    # Augend            
-      +   0001        0111    # Addend            
-      --  ----        ----                        
-          0100        1010    # I.Sum  >--------  
-                                               |  
-       0  0000     1  1100    # Carries        |  
-          0100        1010    # I.Sum  <--------  
-      +   0000        0110    # Fix?              
-      --  ----        ----                        
-       0  0100        0000                        
-    0 40
-    ```
-
-    * 45 + 27 = 72
-     ```
-        45
-     +  27
-     ```
-
-    ```response
-       0  0001     0  1110    # Carries           
-          0100        0101    # Augend            
-      +   0010        0111    # Addend            
-      --  ----        ----                        
-          0111        1100    # I.Sum  >--------  
-                                               |  
-       C  cccc     1  1000    # Carries        |  
-          0111        1100    # I.Sum  <--------  
-      +   0000        0110    # Fix?              
-      --  ----        ----                        
-       0  0111        0010                        
-    0 7 2
-    ```
+       ```response
+          0  0001     0  1110    # Carries           
+             0100        0101    # Augend            
+         +   0010        0111    # Addend            
+         --  ----        ----                        
+             0111        1100    # I.Sum  >--------  
+                                                  |  
+          C  cccc     1  1000    # Carries        |  
+             0111        1100    # I.Sum  <--------  
+         +   0000        0110    # Fix?              
+         --  ----        ----                        
+          0  0111        0010                        
+       
+       Decimal Answer: 72
+       ```
    
 
   1. MIPS instruction Encoding
@@ -133,8 +133,8 @@ l# COMP122 Lecture Notes: October 2, 2024
        - op: 000 000  
        - func: 011 000
        - ~rd:~
-       - rs: $t1 : '0 1001
-       - rt: $t2 : '0 1010
+       - `rs: $t1 : 0 1001`
+       - `rt: $t2 : 0 1010`
        - ~sh:~
        - ~imm:~
        - ~addr:~
@@ -145,9 +145,9 @@ l# COMP122 Lecture Notes: October 2, 2024
      * Example: `add $t1, $t2, $s4`
        - op:   000 000
        - func: 100 000
-       - rd: $t1 : 0 1001
-       - rs: $t2 : 0 1010
-       - rt: $s4 : 1 0100
+       - `rd: $t1 : 0 1001`
+       - `rs: $t2 : 0 1010`
+       - `rt: $s4 : 1 0100`
        - sh: 00000
        - ~imm:~
        - ~addr:~
@@ -161,13 +161,13 @@ l# COMP122 Lecture Notes: October 2, 2024
        - op: 001 000
        - ~func:~
        - ~rd:~
-       - rs: $t5 : '0 1101
-       - rt: $t8 : '1 1000
+       - `rs: $t5 : 0 1101`
+       - `rt: $t8 : 1 1000`
        - ~sh:~
        - imm: 0x23 : 0000 0000 0000 0010 0011
        - ~addr:~
        - Packing into 32 bits:
-         * I: | oooooo | sssss | ttttt | iiii iiii iiii iiii iiii |
+         * I: | oooooo  | sssss |  ttttt | iiii iiii iiii iiii iiii |
          * I: | 001 000 | 0 1101| 1 1000 | 0000 0000 0000 0010 0011 |
 
 

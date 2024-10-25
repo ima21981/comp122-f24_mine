@@ -90,13 +90,13 @@
 
   - Decode the following UTF-8 string
     1. 0110 1010  | 1101 0011 | 1001 1110| 0101 0101 | 1001 1011 |
-   -  0110 1010 : look it up in the ASCII table
-   -  110 - 1 0011 | 10 - 01 1110 
-      - 0100 1101 1110 (unpack the data)
-      - 4 D E
-      - U+04DE
-   -  0101 0101 : look it up in the ASCII table
-   -  1001 1011 - error because its a continuation byte
+       -  0110 1010 : look it up in the ASCII table
+       -  110 - 1 0011 | 10 - 01 1110 
+          - 0100 1101 1110 (unpack the data)
+          - 4 D E
+          - U+04DE
+       -  0101 0101 : look it up in the ASCII table
+       -  1001 1011 - error because its a continuation byte
 
 
     1. 1101 1001  0000 0101 0111 0001
@@ -128,16 +128,14 @@
          - c: 1.010 1110 1010 1011 1100 1010
 
     1. Decode the following binary32
-    - 0 | 101 1101 0 | 111 0101 1101 1001 0101 0101
-    - sign: +
-    - expon/bias: 1011 1010
-    - expon (no bias): 1011 1010 - 127 = 59
-    - mantissa: 111 0101 1101 1001 0101 0101
-
-    + 1.111 0101 1101 1001 0101 0101 x 2^11 1011    // 59
+       - 0 | 101 1101 0 | 111 0101 1101 1001 0101 0101
+       - sign: +
+       - expon/bias: 1011 1010
+       - expon (no bias): 1011 1010 - 127 = 59
+       - mantissa: 111 0101 1101 1001 0101 0101
+       * + 1.111 0101 1101 1001 0101 0101 x 2^11 1011    // 59
 
   - binary32 encoding
-
     - + 1101101.101010
     - + 1.101101101010 x 2^ 0110  //6
     - s eeeeeeee mmmmmmmmmmmmmmmmmmmmmmm
@@ -162,27 +160,27 @@
   1. Boolean-based Operations:
      * Complement:  
        - s1 = ~ t1;  
-       - nor $s1, $t1, $zero   # s1 = ~ ( t1 | 0 ) 
+       - `nor $s1, $t1, $zero`   # s1 = ~ ( t1 | 0 ) 
      * And:    
        - s1 = t1 & t2; 
-       - and $s1, $t1, $t2
+       - `and $s1, $t1, $t2`
      * Or:     
        - s1 = t1 | t2; 
-       - or $s1, $t1, $t2
+       - `or $s1, $t1, $t2`
      * Xor:    
        - s1 = t1 ^ t2; 
-       - xor $s1, $t1, $t2
+       - `xor $s1, $t1, $t2`
 
   1. Shift-based Operations:
      * ~Un/Signed~ Left Shift
        - s1 = t1 << 2; 
-       - sll $s1, $t1, 2        # Shift Left Logical
+       - `sll $s1, $t1, 2`        # Shift Left Logical
      * Unsigned Right Shift
        - s1 = t1 >>> 2;  
-       - srl $s1, $t1, 2        # Shift Right Logical
+       - `srl $s1, $t1, 2`        # Shift Right Logical
      * Signed Right Shift  
        - s1 = t1 >> 2; 
-       - sra $s1, $t1, 2        # Shift Right Arithmetic
+       - `sra $s1, $t1, 2`        # Shift Right Arithmetic
      * ~Unsigned Left Shift~ 
        - ~s1 = t1 <<< t2;~
 

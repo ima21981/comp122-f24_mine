@@ -156,11 +156,11 @@
               9   / 16 =  0, 9
 
          answer: 928   (read remainders from bottom to the top)
-         ```
+        ```
 
-     - 322 -> 2#
-       ```response
-       number = 322    
+      - 322 -> 2#
+        ```response
+        number = 322    
            322   / 2 =  161, 0
            161   / 2 =   80, 1
             80   / 2 =   40, 0
@@ -173,24 +173,24 @@
              0   / 2 =    0, 0
              0   / 2 =    0, 0
        
-       answer: 00 101000010   (read remainders from bottom to the top)
-       ```
+        answer: 00 101000010   (read remainders from bottom to the top)
+        ```
 
-     - 354  -> 8# 
-       ```response
-       number = 354
+      - 354  -> 8# 
+        ```response
+        number = 354
            354   / 8 = 44, 2  
             44   / 8 =  5, 4
              5   / 8 =  0, 5
              0   / 8 =  0, 0
 
 
-       answer: 542   (read remainders from bottom to the top)
-       ```
+        answer: 542   (read remainders from bottom to the top)
+        ```
 
-     - 272 -> 2#
-       ```response
-       number = 272        ---
+      - 272 -> 2#
+        ```response
+        number = 272        ---
            272   / 2 = 136, 0
            136   / 2 =  68, 0
             68   / 2 =  34, 0
@@ -202,8 +202,8 @@
              1   / 2 =   0, 1
              0   / 2 = 
 
-       answer: 2# 1 0001 0000
-       ```
+        answer: 2# 1 0001 0000
+        ```
 
   1. Base 10 to Base N: Fractional Part
 

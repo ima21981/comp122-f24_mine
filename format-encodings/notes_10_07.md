@@ -1,4 +1,4 @@
-l# COMP122 Lecture Notes: October 7, 2024
+# COMP122 Lecture Notes: October 7, 2024
 
 ## Announcements:
   1. Oct 7 (Monday)
@@ -60,7 +60,7 @@ l# COMP122 Lecture Notes: October 7, 2024
 
     1. The equation and order of operations
 
-       ```math
+       ```
        P  = 1000                        // $1000.00 initial principal
        R  = 5                           // 5% interest rate
        T  = 3                           // 3 Years
@@ -71,7 +71,7 @@ l# COMP122 Lecture Notes: October 7, 2024
           = 150 
        ```
        but
-       ```math-integer
+       ```
        P  = 1000                        // $1000.00 initial principal
        R  = 5                           // 5% interest rate
        T  = 3                           // 3 Years

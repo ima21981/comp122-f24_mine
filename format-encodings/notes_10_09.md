@@ -50,7 +50,7 @@
      mtlo rs           #  lo = rs
      mfhi rd           #  rd = hi
      mthi rs           #  hi = rs
-   ```
+     ```
      - psuedo instruction:
        * `mul rd, rs, rt`  :  rd = rs * rt
      - correspoding native instruction:
@@ -74,7 +74,7 @@
         - `PRACTICUM=code_10_09M`
         - `PRACTICUM=code_10_09A`
         - `PRACTICUM=code_10_10`
-      * Suggested Student's directory to work along
+      * Suggested Student's directory names to work along
         - `PRACTICUM=code_10_09_mine`
         - `PRACTICUM=code_10_10_mine`
 

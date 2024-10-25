@@ -1,4 +1,4 @@
-l# COMP122 Lecture Notes: September 30, 2024
+# COMP122 Lecture Notes: September 30, 2024
 
 ## Announcements:
   1. Graded Assignments:
@@ -82,7 +82,7 @@ l# COMP122 Lecture Notes: September 30, 2024
     - 16# "0"101 0111 1110 1110 0011 1000 1100 1101 0101 0111
       -   5      7    E    E    3    8    C    D    5   7
     - BCD:
-      - 
+      -  5 7 NA NA 3 8 NA NA 5 7
 
    * Base 8 -> 2
      - 8# 12 335 475 524 624 274 654
@@ -113,7 +113,7 @@ l# COMP122 Lecture Notes: September 30, 2024
     - 010101101110001010101011100
     - 2#  0101 0110 | 1110 0010 | 1010 1011 | 1000 0000
     - 16# 56          E2          AB          80
-    -     V           NA
+    - ---  V          NA          NA          NA
 
   * Binary String --> base64
     - 10101011101111100111001110101
@@ -202,7 +202,7 @@ l# COMP122 Lecture Notes: September 30, 2024
   * Binary string --> ASCII
     * 0100 1010 | 0100 1010 | 0001 0100 |  (given)
        - 0x  | 45 | 45 | 14
-       -     |  E |  E | <dc4>
+       - --- |  E |  E | <dc4>
     * 0110 1010 | 0101 1111 | 0000 1101 | 0101 0111  (given)
        - 0x 6A | 5F | 0D | 57
        - j_ <cr> W   :
