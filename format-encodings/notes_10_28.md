@@ -14,7 +14,8 @@
       - some students attempted branches 
         - their investment in themselves paid dividends
 
-   1. What's changed:  The Prof did a `git push`
+   1. What's changed:  The Prof did a `git pull`
+      - diff {file1} {file2}
       - git diff {filename}
         * difference between working directory and HEAD
 
@@ -44,8 +45,10 @@
 
   1. Lecture
      1. Practicum
-        - int git_bit()
-        - int bits2int()
+        - int bit2int()
+        - int binary2int()
+        - Manual Testing:
+          - echo 0 | java_subroutine bit2int
 
      1. switch/case statement
 
@@ -59,6 +62,9 @@
 
 ## Questions from Last Lecture/Lab, etc.:
    * M/W
+     - Subroutine in mips... 
+     - Is the Prof's expectations to high?
+
 
    * T/R
 
@@ -66,7 +72,6 @@
 
 ---
 # Today's Lecture Material
-
 
   1. Lecture
      * Have you read this?
@@ -143,7 +148,7 @@
             ```java tac
             init:  ;
                    {var} = expression;
-            split: switch(expression) {
+            split: switch( {var} ) {
                    
                       case x:
                           mips.next(y);
