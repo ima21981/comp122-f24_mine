@@ -1,4 +1,4 @@
-# COMP122 Lecture Notes: October 27, 2024
+# COMP122 Lecture Notes: October 28, 2024
 
 ## Announcements:
    1. Streetlight Effect
@@ -14,9 +14,10 @@
       - some students attempted branches 
         - their investment in themselves paid dividends
 
-   1. What's changed
+   1. What's changed:  The Prof did a `git push`
       - git diff {filename}
         * difference between working directory and HEAD
+
       - git diff {commit} [{filename}]
         * difference between working directory and the commit
 
@@ -46,7 +47,7 @@
         - int git_bit()
         - int bits2int()
 
-     1. switch/case statment
+     1. switch/case statement
 
      1. Practicum
         - int glyph2int()
@@ -71,7 +72,19 @@
      * Have you read this?
        - reference/TAC_transformation.md
 
-     1. Practicum
+     1. Practicums: 
+        * Versions
+          - the Prof's version
+            ```bash
+            cd ~/classes/comp122/practicums
+            git clone git@github.com:COMP122/code_10_28.git 
+            ```
+          - my (student's) version
+            ```bash
+            cd ~/classes/comp122/practicums
+            mkdir code_10_28_{github_account}
+            ```
+
         * int bit2int();
           - reads an ASCII char
           - returns 
@@ -86,7 +99,7 @@
           number = number * 2 + git_bit()
           ```
 
-     1. Jav switch/case statement
+     1. Java switch/case statement
         - reference/TAC_transformation/switch.png
         - Example
           ```java
@@ -109,16 +122,42 @@
                  break;
             }
           ```
+
         - Java if-then-else equivalence
+          * see your notes
+
         - Java TAC transformation
           - blocks:
             * init
             * body
             * done
             * each "case"
-            *  switch: {x} = expression
-          - mips.next("{label}")
-          - mips.merge("{label}") 
+          - mips.next("{value}")
+          - mips.merge("{value}") 
+          - Example:
+            ```java tac
+            init:  ;
+                   {var} = expression;
+            split: switch(expression) {
+                   
+                      case x:
+                          mips.next(y);
+                          ; // code block
+                          break split; 
+                          mips.merge(y);
+                            
+                      case y:
+                          mips.next("default");
+                          ; // code block
+                          break;
+                          mips.merge("default");
+
+                      default:
+                          ;    // code block
+                          break split;
+                     }
+            done:  ; 
+            ```
 
 
 
