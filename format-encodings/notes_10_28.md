@@ -84,6 +84,11 @@
             cd ~/classes/comp122/practicums
             mkdir code_10_28_{github_account}
             ```
+        * Input:
+          ```
+          mips.read_c();
+          c = mips.retval();     # -1 is returned if nothing to read
+          ```
 
         * int bit2int();
           - reads an ASCII char
