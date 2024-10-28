@@ -264,7 +264,7 @@ Transforming the control-flow graph into equivalent code, using the TAC style, r
 
   ```java tac
   init: {var} = x % 4;
-  split: switch ({var}) {
+  split: switch ( {var} ) {
            case 1:
                   mips.next("2")
                   m = 3;

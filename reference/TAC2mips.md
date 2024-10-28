@@ -188,7 +188,7 @@ As part of the transliteration of a `switch` statement, each of the "case" label
   | `mips.next("default");`   | `bne {var}, $gp, default    `            |
   | `mips.merge("default");`  | `b default    `                          |
   |                           |                                          |
-  | `mips.next("{next}");`    | `bne {var}, $gp, test_{next}`            |
+  | `mips.next("{next}");`    | `bne {var}, $gp, case_{next}`            |
   | `mips.merge("{next}");`   | `b body_{next}`                          |
 
 
@@ -197,13 +197,13 @@ As part of the transliteration of a `switch` statement, each of the "case" label
     ```
       stmt:  nop                         # switch ($t1) {
         case_1: li $gp, 1                #   case 1:
-                bne $t1, $gp, test_2     #          mips.next("2");
+                bne $t1, $gp, case_2     #          mips.next("2");
                                          #          // code block
                 b done                   #          break stmt;
                 b body_2                 #          mips.merge("2");
 
         case_2: li $gp, 2                #   case 2:
-                bne $t1, $gp, test_3     #          mips.next("3");
+                bne $t1, $gp, case_3     #          mips.next("3");
                                          #          // code block
                 b done                   #          break stmt;
                 b body_3                 #          mips.merge("3");
@@ -216,7 +216,7 @@ As part of the transliteration of a `switch` statement, each of the "case" label
                 b default                #          mips.merge("default");
 
          default:                        #   default:
-                                         #          // code block                          
+                                         #      // code block 
                 b done
                                          # }  
     done:       nop                      # ; 
