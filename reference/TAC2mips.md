@@ -157,7 +157,7 @@ Note that sometimes there is not a 100% direct correlation between your JAVA TAC
   | TAC Control Flow                  | MIPS Instruction           |
   |-----------------------------------|----------------------------|
   | `label: ;`                        | `label: nop`               |
-  | `continue label;`                 | `b label`                  |
+  | `continue {loop};`                | `b {loop}`                 |
   | `break label;`                    | `b {done}`                 |
   |                                   |                            |
   | `for(; a <cond> b ;) {`           | `b<! cond> a, b, {done}`   |

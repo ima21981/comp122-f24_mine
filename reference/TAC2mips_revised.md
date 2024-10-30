@@ -143,26 +143,26 @@ Note that sometimes there is not a 100% direct correlation between your JAVA TAC
      * {next_n}: a sequence of code blocks after the next_0 block: next_1, ..., next_n .
      * {done}:   the statement after conditional statment.
      
-  | TAC Control Flow                    | MIPS Instruction             |
-  |-----------------------------------  |------------------------------|
-  | `label: ;`                          | `label: nop`                 |
-  | `break {comp};`                     | `b {done}`                   |
-  |                                     |                              |
-  | `if (a <comp> b) {`                 | `b<! comp> a, b, {next_1}`   |
-  | `else if ( a <comp b> ) {`          | `b<! comp> a, b, {next_n+1}` |
-  |                                     |                              |        
-  | `if (a <comp> b) {`                 | `b<comp> a, b, {next_0}`     |
-  |                                     | `b {next_1}`                 |
-  |                                     |                              |
-  | `else if ( a <comp> b ) {`          | `b<comp> a, b, {next_n}`     |
-  |                                     | `b {next_n+1}`               |
-  |                                     |                              | 
-  | `else {`                            |                              |
-  | `}`                                 |                              |
-  |                                     |                              |
-  | `if (a <comp> b) break {cond};`     | `b<comp> a, b, {done}`       |
-  | `if (a <comp> b) continue {cond};`  | `b<comp> a, b, {cond}`       |
-  |                                     |                              |
+  | TAC Control Flow                   | MIPS Instruction             |
+  |----------------------------------- |------------------------------|
+  | `label: ;`                         | `label: nop`                 |
+  | `break {comp};`                    | `b {done}`                   |
+  |                                    |                              |
+  | `if (a <comp> b) {`                | `b<! comp> a, b, {next_1}`   |
+  | `else if ( a <comp b> ) {`         | `b<! comp> a, b, {next_n+1}` |
+  |                                    |                              | 
+  | `if (a <comp> b) {`                | `b<comp> a, b, {next_0}`     |
+  |                                    | `b {next_1}`                 |
+  |                                    |                              |
+  | `else if (a <comp> b) {`           | `b<comp> a, b, {next_n}`     |
+  |                                    | `b {next_n+1}`               |
+  |                                    |                              | 
+  | `else {`                           |                              |
+  | `}`                                |                              |
+  |                                    |                              |
+  | `if (a <comp> b) break {cond};`    | `b<comp> a, b, {done}`       |
+  | `if (a <comp> b) continue {cond};` | `b<comp> a, b, {cond}`       |
+  |                                    |                              |
 
 
 

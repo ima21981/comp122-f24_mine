@@ -28,7 +28,7 @@
 ## Today's Agenda:
 
   1. Lecture
-     1. Conditional statment transformation into TAC form
+     1. Conditional statement transformation into TAC form
         * If_then, if_then_else, if_else-if_else Statements
 
      1. switch/case statement 
@@ -43,6 +43,9 @@
 
 ## Questions from Last Lecture/Lab, etc.:
    * M/W
+     - Why is code_10_28 private?   
+       * Error on my part... Fixed!
+     - 
 
    * T/R
 
@@ -70,17 +73,92 @@
           1. sequence of if-then-else statements
 
              ```java
+             if (digit == '0') {
+                value = 0;
+             } else {
+               if (digit == '1') {
+                  value = 1;
+               } else {
+                 if (digit == '2') {
+                   value = 2;
+                 } else {
+                   if (digit == '3' ) {
+                    value = 3;
+                   } else {
+                     value = -1;
+                   }
+                 }
+               }
+             }
              ```
 
           1. change my style
              ```java
+             if (digit == '0') {
+                value = 0;
+             }
+             else if (digit == '1') {
+                value = 1;
+             } 
+             else if (digit == '2') {
+                value = 2;
+             } 
+             else if (digit == '3' ) {
+                value = 3;
+             } 
+             else {
+                value = -1;
+             }
              ````
 
         - transformation into java tac
+          * updated on Oct 31
+          * Note treating else-if in a special way
+            * consider it one keyword...
+            * but put them on two different lines
+            * associated a label with the 'if' statement
+
           ```java tac
-
+          init:     ;
+                    _zero = '0';
+                    _one  = '1';
+                    _two  = '2';
+                    _three = '3';
+          cond:     if (digit == _zero) {
+          next_0:       ;
+                        value = 0;
+                        break cond;
+                    }
+                    else 
+          next_1:   if (digit == _one) {
+                        ;
+                        value = 1;
+                        break cond;
+                    } 
+                    else 
+          next_2:   if (digit == _two) {
+          
+                        value = 2;
+                        break cond;
+                    } 
+                    else 
+          next_3:   if (digit == _three ) {
+                        ;
+                        value = 3;
+                        break cond;
+                    } 
+                    else {
+          next_4:       ;
+                        value = -1;
+                        break cond;              
+                    }
+          next_5:   ;
+          done:     ;
           ```
-
+          * note the locations of:
+            - next_0 and next_4
+            - next_1, next_2, next_3
+            
 
      1. Java switch/case statement
         - reference/TAC_transformation/switch.png
@@ -129,7 +207,7 @@
                       case y:
                           mips.next("default");
                           ; // code block
-                          break;
+                          break split;
                           mips.merge("default");
 
                       default:
@@ -139,20 +217,18 @@
             done:  ; 
             ```
 
-
-
      1. C Switch Statement
         ```c
         switch (input) {
-          case '0'...'9' :   digit = digit - '0';
+          case '0'...'9' :   digit = input - '0';
                              break;
 
-          case 'A'...'F' :   digit = digit - 'A' 
-                             digit = digit + 10;
+          case 'A'...'Z' :   digit = input - 'A' 
+                             digit = input + 10;
                              break;
 
-          case 'a'...'f' :   digit = digit - 'a' 
-                             digit = digit + 10;
+          case 'a'...'z' :   digit = input - 'a' 
+                             digit = input + 10;
                              break;
           default:           digit = -1;
         }
@@ -164,13 +240,46 @@
 
         - Java Equivalent Statement
 
-       ```java
-       ```
+          ```java
+          switch (input) {
+            case '0':   
+            case '1':   
+            case '2':   
+            case '3':   
+            case '4':   
+            case '5':   
+            case '6':   
+            case '7':   
+            case '8':   
+            case '9':   digit = input - '0'; break;
+            
+            case 'A'...'Z' :   digit = input - 'A' 
+                               digit = input + 10;
+                               break;
+            case 'a'...'z' :   digit = input - 'a' 
+                               digit = input + 10;
+                               break;
+            default:           digit = -1;
+          }
+          ```
 
 
         - Java Rewrite with in_range
           * in_range(value, '0', '9')
 
+          ```java
+          if ('0' <= input <= '9') {
+
+          }
+          else if ('A' <= input <= 'Z') {
+
+          }
+          else if ('a' <= input <= 'z') {
+
+          }
+          else
+            digit = -1;
+          ```
 
      1. Practicum
         - int glyph2int(int radix);
