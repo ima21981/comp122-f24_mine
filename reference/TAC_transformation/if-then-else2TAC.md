@@ -1,4 +1,6 @@
-# Conversion of an if-then-else statement into TAC Style
+# Conversion of an if-then-else statement into TAC Style[^1]
+
+[^1 The if-then-else statement has been reworked. This version remains for reference for previous assignments (prior to Oct 28, 2024).]
 
 The if-the-else statement is common to every programming language. This statement conditional executes one of two blocks of code based upon the value a Boolean expression (known as the `test`). These two blocks of code are known as the consequence (cons) and the alternative (alt). The `cons` block is executed whenever the Boolean expression is evaluated as TRUE, alternatively the `alt` block is executed. 
 
@@ -84,7 +86,7 @@ Consider the following code template:
 
    1. Transform the `alt` block into TAC style
       1. Insert the {alt} label, with a null statement, at top of the alternative code block
-      1. Append 'break {cond};' to the end of consequence code block
+      1. Append 'break {cond};' to the end of alternative code block
       1. Transform the code within the block to conform to the TAC style
 
 Applying the above algorithm results in the following template:

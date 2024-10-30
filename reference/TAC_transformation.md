@@ -84,6 +84,8 @@ By converting the original mathematical expression into the TAC style, you can h
 
 ### [Conversion of an if-then-else statement into TAC](./TAC_transformation/if-then-else2TAC.md)
 
+### [Conversion of an conditional statement into TAC](./TAC_transformation/condition2TAC.md)
+
 ### [Conversion of a for-loop statement into TAC style](./TAC_transformation/for-loop2TAC.md)
 
 ### Conversion of while-loop statement into TAC style
