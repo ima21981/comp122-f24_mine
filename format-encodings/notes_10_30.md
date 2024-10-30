@@ -1,8 +1,11 @@
 # COMP122 Lecture Notes: October 30, 2024
 
 ## Announcements:
+
+   1. "To solve a problem, you often have to change your perspective."  
+
    1. I had an epiphany (a moment of sudden revelation or insight)
-      - related to explain the if, if-else, transformation
+      - related to explaining the if, if-else, transformation
       - prior approach: 
         - keep it simple: just use the 'if-else' statement
         - make the 'if' statement a special case
@@ -10,7 +13,7 @@
         - focus on a chain of "if else-if" statements
         - thus unifing all conditional statements into one approach
    1. What does this mean?
-      * A change to the TAC transform algorithm for Conditional Statements
+      * I changed to the TAC transform algorithm for Conditional Statements
       * New files:
         - reference/TAC2mips_revised.md
         - reference/TAC_transformation/conditional2TAC.md
@@ -25,10 +28,11 @@
 ## Today's Agenda:
 
   1. Lecture
-     1. Conditional transformation from Java --> Java TAC
+     1. Conditional statment transformation into TAC form
         * If_then, if_then_else, if_else-if_else Statements
 
-     1. switch/case statement
+     1. switch/case statement 
+        * Is this not a Conditional statement?
 
      1. Practicum
         - int glyph2int()
