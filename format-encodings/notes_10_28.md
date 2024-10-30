@@ -65,8 +65,8 @@
      - Subroutine in mips... 
      - Is the Prof's expectations to high?
 
-
    * T/R
+     - What are the tests in the pregrade process?
 
 ## Any Review?
 
@@ -83,6 +83,7 @@
             ```bash
             cd ~/classes/comp122/practicums
             git clone git@github.com:COMP122/code_10_28.git 
+            git clone git@github.com:COMP122/code_10_29.git 
             ```
           - my (student's) version
             ```bash
@@ -109,7 +110,7 @@
           number = number * 2 + git_bit()
           ```
 
-     1. Java switch/case statement
+     1. Some discussion on the switch statement
         - reference/TAC_transformation/switch.png
         - Example
           ```java
@@ -132,93 +133,11 @@
                  break;
             }
           ```
-
-        - Java if-then-else equivalence
-          * see your notes
-
-        - Java TAC transformation
-          - blocks:
-            * init
-            * body
-            * done
-            * each "case"
-          - mips.next("{value}")
-          - mips.merge("{value}") 
-          - Example:
-            ```java tac
-            init:  ;
-                   {var} = expression;
-            split: switch( {var} ) {
-                   
-                      case x:
-                          mips.next(y);
-                          ; // code block
-                          break split; 
-                          mips.merge(y);
-                            
-                      case y:
-                          mips.next("default");
-                          ; // code block
-                          break;
-                          mips.merge("default");
-
-                      default:
-                          ;    // code block
-                          break split;
-                     }
-            done:  ; 
-            ```
-
-
-
-     1. C Switch Statement
-        ```c
-        switch (input) {
-          case '0'...'9' :   digit = digit - '0';
-                             break;
-
-          case 'A'...'F' :   digit = digit - 'A' 
-                             digit = digit + 10;
-                             break;
-
-          case 'a'...'f' :   digit = digit - 'a' 
-                             digit = digit + 10;
-                             break;
-          default:           digit = -1;
-        }
-        if (digit > (radix - 1)) {
-          digit = -1;
-        }
-        return digit;
-        ```
-
-        - Java Equivalent Statement
-
-
-
-        - C if-then-else equivalence 
-          * in_range(value, '0', '9')
-
-     1. Practicum
-        - int glyph2int(int radix);
-          - reads an ASCII char
-          - returns 
-            * 0 if '0'
-            * 1 if '1'
-            * etc.
-            * -1 otherwise
-        - int nextInt(int radix);
-          - returns number
-          ```psudeo 
-          number = number * radix + glyph2int(radix)
-          ```
-  1. Lab: 
-     1. Cleanup
-     1. Time to work on practicum
-        - This code is part of your next assignment!
-
  
 # Today's Lab Material
+
+  1. Continuation of the practicum
+
 
 
 ---

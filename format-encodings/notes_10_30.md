@@ -1,15 +1,19 @@
 # COMP122 Lecture Notes: October 30, 2024
 
 ## Announcements:
-   1. I had an epiphany on how to explain if-then-else --> switch transformation
-      * epiphany: a moment of sudden revelation or insight:
-      * prior: simplest form and then explain the complex
-      * now: the most general and then let things degrade 
-   1. What?
+   1. I had an epiphany (a moment of sudden revelation or insight)
+      - related to explain the if, if-else, transformation
+      - prior approach: 
+        - keep it simple: just use the 'if-else' statement
+        - make the 'if' statement a special case
+      - new approach: 
+        - focus on a chain of "if else-if" statements
+        - thus unifing all conditional statements into one approach
+   1. What does this mean?
+      * A change to the TAC transform algorithm for Conditional Statements
       * New files:
         - reference/TAC2mips_revised.md
         - reference/TAC_transformation/conditional2TAC.md
-
 
    1. Recall Last time
       * Practicum
@@ -49,14 +53,16 @@
           - the Prof's version
             ```bash
             cd ~/classes/comp122/practicums
-            git clone git@github.com:COMP122/code_10_28.git 
-            git clone git@github.com:COMP122/code_10_20.git 
+            git clone git@github.com:COMP122/code_10_30.git 
+            git clone git@github.com:COMP122/code_10_31.git 
             ```
 
      1. Conditional Transformation
         - a review or update (well update)
 
-        - write some code to convert '0'.. '9' --> 0 .. 9
+        - rewrite bit2int into tetrad2int
+          * tetrad: a group of four: 0, 1, 2, 3
+
           1. sequence of if-then-else statements
 
              ```java
@@ -65,6 +71,12 @@
           1. change my style
              ```java
              ````
+
+        - transformation into java tac
+          ```java tac
+
+          ```
+
 
      1. Java switch/case statement
         - reference/TAC_transformation/switch.png
@@ -152,8 +164,9 @@
        ```
 
 
-        - C if-then-else equivalence 
+        - Java Rewrite with in_range
           * in_range(value, '0', '9')
+
 
      1. Practicum
         - int glyph2int(int radix);
@@ -177,9 +190,13 @@
 ---
 ## Resources
 
-* reference/TAC_transformation.md
-* reference/TAC2mips.md
+  1. Previous
+     * reference/TAC_transformation.md
+     * reference/TAC2mips.md
 
+  1. Rework for Conditional
+     * reference/TAC2mips_revised.md
+     * reference/TAC_transformation/conditional2TAC.md
 
 ---
 <!-- This section for student's to place their own notes. -->
