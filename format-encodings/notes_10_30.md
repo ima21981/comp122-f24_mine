@@ -2,8 +2,8 @@
 
 ## Announcements:
    1. I had an epiphany on how to explain if-then-else --> switch transformation
-      * ephiphany: a moment of sudden revelation or insight:
-      * prior: simpliest form and then explain the complex
+      * epiphany: a moment of sudden revelation or insight:
+      * prior: simplest form and then explain the complex
       * now: the most general and then let things degrade 
    1. What?
       * New files:
