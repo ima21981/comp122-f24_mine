@@ -52,6 +52,23 @@ Note that sometimes there is not a 100% direct correlation between your JAVA TAC
       | `x = a >> b;`                 | `srav x, a, b`            |
       | `x = a << b;`                 | `sllv x, a, b`            |
 
+      | TAC Boolean                   | MIPS Instructions         |
+      |-------------------------------|---------------------------|
+      | `x = true;`                   | `li x, 1`                 |
+      | `x = false;`                  | `li x, 0`                 |
+      | `x = a == b;`                 | `seq x, a, b`             |
+      | `x = a == imm;`               | `seq x, a, imm`           |
+      | `x = a <cond> b;`             | `s<cond> x, a, b`         |
+      | `x = a <cond> imm;`           | `s<cond> x, a, imm`       |
+      | `x = a && b;`                 | `and x, a, b`             |
+      | `x = a && imm;`               | `imm x, a, b`             |
+      | `x = a || b;`                 | `or x, a, b`              |
+      | `x = a || imm;`               | `ori x, a, imm`           |
+      | `x = ! a;`                    | `li x, -2`                |
+      |                               | `nor x, x, a`             |
+
+      [^bool See the Conditional Mapping section for <cond> values]
+
       | TAC Mult / Div Equations      | MIPS Instruction          |
       |-------------------------------|---------------------------|
       | `x = a * b;`                  | `mult a, b`               |
@@ -73,40 +90,40 @@ Note that sometimes there is not a 100% direct correlation between your JAVA TAC
 
 ### Array Operations with non-Java Pointer Operations
 
-      | TAC Array Equations           | MIPS Instruction          |
-      |-------------------------------|---------------------------|
-      |                               |                           |
-      | `x = A[imm];`                 | `la p, A`                 |
-      |                               | `lb x, imm(p)`            |
-      |                               |                           |
-      |                               |                           |
-      | `x = A[v];`                   | `la p, A`                 |
-      |                               | `add p, p, v`             |
-      |                               | `lb x, 0(p)`              |
-      |                               |                           |
-      | `A[imm] = x;`                 | `la p, A`                 |
-      |                               | `sb x, imm(p)`            |
-      |                               |                           |
-      | `A[v] = x;`                   | `la p, A`                 |
-      |                               | `add p, p, v`             |
-      |                               | `sb x, 0(a)`              |
-      |                               |                           |
-      | `p = & A;`                    | `la p, A`                 |
-      | `x = (* p);`                  | `lb x, 0(p)`              |
-      | `(* p) = x;`                  | `sb x, 0(p)`              |
-      |   
+  | TAC Array Equations           | MIPS Instruction          |
+  |-------------------------------|---------------------------|
+  |                               |                           |
+  | `x = A[imm];`                 | `la p, A`                 |
+  |                               | `lb x, imm(p)`            |
+  |                               |                           |
+  |                               |                           |
+  | `x = A[v];`                   | `la p, A`                 |
+  |                               | `add p, p, v`             |
+  |                               | `lb x, 0(p)`              |
+  |                               |                           |
+  | `A[imm] = x;`                 | `la p, A`                 |
+  |                               | `sb x, imm(p)`            |
+  |                               |                           |
+  | `A[v] = x;`                   | `la p, A`                 |
+  |                               | `add p, p, v`             |
+  |                               | `sb x, 0(a)`              |
+  |                               |                           |
+  | `p = & A;`                    | `la p, A`                 |
+  | `x = (* p);`                  | `lb x, 0(p)`              |
+  | `(* p) = x;`                  | `sb x, 0(p)`              |
+  |   
 
 
 ### Comparision Mappings: (`<comp>` --> `<! comp>`)
 
-      | `TAC <comp>` | `MIPS <comp>` | `MIPS <! comp>` |`TAC <! comp>` |
-      |:------------:|:-------------:|:---------------:|:-------------:|
-      | `<`          | `lt`          | `ge`            |  `>=`         |
-      | `<=`         | `le`          | `gt`            |  `>`          |
-      | `!=`         | `ne`          | `eq`            |  `==`         |
-      | `==`         | `eq`          | `ne`            |  `!=`         |
-      | `>=`         | `ge`          | `lt`            |  `<`          |
-      | `>`          | `gt`          | `le`            |  `<=`         |
+  | `TAC <comp>` | `MIPS <comp>` | `MIPS <! comp>` |`TAC <! comp>` |
+  |:------------:|:-------------:|:---------------:|:-------------:|
+  | `<`          | `lt`          | `ge`            |  `>=`         |
+  | `<=`         | `le`          | `gt`            |  `>`          |
+  | `!=`         | `ne`          | `eq`            |  `==`         |
+  | `==`         | `eq`          | `ne`            |  `!=`         |
+  | `>=`         | `ge`          | `lt`            |  `<`          |
+  | `>`          | `gt`          | `le`            |  `<=`         |
    
 
 
