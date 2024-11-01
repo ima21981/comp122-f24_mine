@@ -73,8 +73,7 @@ Note that sometimes there is not a 100% direct correlation between your JAVA TAC
       | `x = a && imm;`               | `imm x, a, b`             |
       | `x = a || b;`                 | `or x, a, b`              |
       | `x = a || imm;`               | `ori x, a, imm`           |
-      | `x = ! a;`                    | `li x, -2`                |
-      |                               | `nor x, x, a`             |
+      | `x = ! a;`                    | `xor x, a, -2`            |
 
       [^bool See the Conditional Mapping section for <cond> values]
 
