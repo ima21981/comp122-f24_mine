@@ -20,7 +20,7 @@ This file contains the list of deliverables for COMP 122. Such deliverables incl
 
 
 1. Quiz 1: Models of Communication and Computation
-   - Status: Closed
+   - Status: Closed, Graded 11/1
    - Additional Information: 
      - paper-like deliverable
      - 2 hour timed quiz: 
@@ -63,7 +63,7 @@ This file contains the list of deliverables for COMP 122. Such deliverables incl
    - Due Date: ASAP
 
 1. Name: My First MD Assignment
-   - Status: Graded and Closed
+   - Status: Graded 10/19
    - Deliverable ID: 02-
    - Public_URL: https://github.com/COMP122/02-first-MD-assignment-public
    - Invitation URL: https://classroom.github.com/a/5mXbyUv_
@@ -77,7 +77,7 @@ This file contains the list of deliverables for COMP 122. Such deliverables incl
    - Due Date: Sep 06 23:59 PDT
 
 1. Name: My First Programming Assignment
-   - Status: Closed
+   - Status: Graded 10/27
    - Deliverable ID: 04-
    - Invitation URL: https://classroom.github.com/a/O4w6B-Ly
    - Due Date: Sep 17 23:59 PDT
@@ -106,13 +106,13 @@ This file contains the list of deliverables for COMP 122. Such deliverables incl
    - Due Date: Oct 8 23:59 PDT
    
 1. Name: UTF-8 Encoding
-   - Status: Closed
+   - Status: Graded 10/21
    - Deliverable ID: 22-
    - Invitation URL: https://classroom.github.com/a/UgSIGNYc
    - Due Date: Oct 13 23:59 PDT
     
 1. Name: Base Conversion and Floating Point Representation
-   - Status: Assigned
+   - Status: Graded 11/02
    - Deliverable ID: 23-
    - Invitation URL: https://classroom.github.com/a/g4fW0k44
    - Due Date: Oct 23 23:59 PDT
