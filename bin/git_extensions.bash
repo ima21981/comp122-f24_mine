@@ -36,10 +36,13 @@ function my_git_clone () {
   'git' 'clone' "$_URL" $_dir
 
   [[ -z "$_dir" ]] && _dir=$(basename -s .git $_URL)
-  touch $_dir/.assignment_accepted
-  git -C $_dir add .assignment_accepted
-  git -C $_dir commit -m "Assignment Accepted" 
-  git -C $_dir push
+  if [[ $_dir == [0-9][0-9]-* ]] ; then
+     # Only do a push, if it is an assignment
+     touch $_dir/.assignment_accepted
+     git -C $_dir add .assignment_accepted
+     git -C $_dir commit -m "Assignment Accepted" 
+     git -C $_dir push
+  fi
 
 }
 
