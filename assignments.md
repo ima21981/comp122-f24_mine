@@ -150,7 +150,7 @@ This file contains the list of deliverables for COMP 122. Such deliverables incl
 <h3 id="mips">MIPS Programming (Section 4)</h3>
 
 1. Assignment: Simple Interest
-   - Status: Assigned
+   - Status: Graded 11/3
    - Deliverable ID: 41-
    - Invitation URL: https://classroom.github.com/a/p5JjzpA1
    - Due Date: Oct 11 23:59 PDT
@@ -162,7 +162,7 @@ This file contains the list of deliverables for COMP 122. Such deliverables incl
    - Due Date: Oct 17 23:59 PDT
 
 1. Assignment: binary32 
-   - Status: Unassigned -- Spec needs to be written!
+   - Status: Assigned
    - Deliverable ID: 43-
    - Invitation URL: https://classroom.github.com/a/rPUz3Z0h
    - Due Date: Oct 27 23:59 PDT
