@@ -5,6 +5,18 @@
    1. More Grading Done
       - make test_{task}    -- to run your code in the current state
       - make confirm_{task} -- to run the Prof's view of your code
+        - git switch --detach java_submitted
+        - make test_java
+      - key issues
+        - not following the process
+        - not testing your code
+        - seeking help from others who have not read the spec
+
+   1. 42-, 43- assignments
+      - although they are past due
+      - you can alter your tags to ensure I grade what you want me to grade
+        * pick your best commit before the due date
+      - no tags, then I can't grade
 
    1. Name: Binary Addition
       - Status: Released
@@ -53,7 +65,9 @@
        1. What is the rval associated with `A[3]`:
           - 
        1. What is the lval associated with `A[-3]`:
+          -
 
+          
        | labels | memory     | address     |   
        |--------|-----------:| ------------|   
        |        | 253 (0xfd) | 0x0100 000A |   
@@ -188,6 +202,14 @@
 
   1. Complete last Practicum
   1. Refactor NextInt to read a string
+     - man 2 read
+     ```java
+     char [] buffer = new char[256];
+
+     mips.read_s(buffer, 256);
+     buffer_length = mips.retval(); 
+     ```
+
   1. Macros for ASCII Chars (https://www.javatpoint.com/java-string-touppercase)
 
 
