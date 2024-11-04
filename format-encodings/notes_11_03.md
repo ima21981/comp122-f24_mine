@@ -27,10 +27,11 @@
 ---
 # Today's Lecture Material
 
-  1. Arrays:
-     - Stored in Memory
+  1. Arrays: 
+     - Memory is an array of bytes!
+     - Hence, we are talking about memory
      - A reference is stored in a register
-
+       * A refence is either an address (lval) or a label
      - Consider the memory below:
        1. What is the value stored in memory at location `0x0100 000A`: 
           - 
@@ -46,18 +47,18 @@
           - 
        1. What is the lval associated with `A[-3]`:
 
-       |     | mem |              |
-       |-----|-----|--------------|
-       |     | 253 |  0x0100 000A |   # 0xfd
-       | C:  |  42 |  0x0100 0009 |   # 0x2a
-       |     |   0 |  0x0100 0008 |   # 0x00
-       | A:  |   1 |  0x0100 0007 |   # 0x01
-       |     |   2 |  0x0100 0006 |   # 0x02
-       | D:  |   3 |  0x0100 0005 |   # 0x03
-       |     |  77 |  0x0100 0004 |   # 0x49
-       | B:  | 202 |  0x0100 0003 |   # 0xca
-       |     |  54 |  0x0100 0002 |   # 0x36
-       |     | 123 |  0x0100 0001 |   # 0x7b
+       | labels | memory     | address     |   
+       |--------|-----------:| ------------|   
+       |        | 253 (0xfd) | 0x0100 000A |   
+       | C:     |  42 (0x2a) | 0x0100 0009 |   
+       |        |   0 (0x00) | 0x0100 0008 |   
+       | A:     |   1 (0x01) | 0x0100 0007 |   
+       |        |   2 (0x02) | 0x0100 0006 |   
+       | D:     |   3 (0x03) | 0x0100 0005 |   
+       |        |  77 (0x49) | 0x0100 0004 |   
+       | B:     | 202 (0xca) | 0x0100 0003 |   
+       |        |  54 (0x36) | 0x0100 0002 |   
+       |        | 123 (0x7b) | 0x0100 0001 |   
 
 
   1. MIPS Operations:
@@ -109,7 +110,10 @@
    | `x = (* p);`                  | `lbu x, 0(p)`             |
    | `(* p) = x;`                  | `sb x, 0(p)`              |
 
- 
+   - Pointer Notation:
+     - `p = & A;`  :  `&A`    == lval(A) == A.lval()
+     - `x = (* p)` :  `(* p)` == rval(p) == p.rval();
+
 
   1. Java String Processing: three independent types
      1. A string is an object that contains an array of characters
