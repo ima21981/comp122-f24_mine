@@ -6,6 +6,13 @@
       - make test_{task}    -- to run your code in the current state
       - make confirm_{task} -- to run the Prof's view of your code
 
+   1. Name: Binary Addition
+      - Status: Released
+      - Deliverable ID: 24-
+      - Invitation URL: https://classroom.github.com/a/6jrqySPT
+      - Due Date: Nov 10 23:52 PDT
+
+
 ## Today's Agenda:
 
   1. Lecture
@@ -140,15 +147,25 @@
      ```
 
 
-   1. Java: A.length  versus  C: strlen(char * A)
+   1. Practicum: int strlen(char[])
+      - Java: A.length  versus  C: strlen(char * A)
       - man strlen
       - man -k string | grep ^str
 
+      - first approach
       ```java
       for(i=0; A[i]!='\0'; i++){
         ;
       }
       
+      return i;
+      ```
+
+      - second approach
+      ```java
+      for(i=0;   ; i++){
+         if (A[i] == '\0') break;
+      }
       return i;
       ```
 
