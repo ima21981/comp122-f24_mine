@@ -117,17 +117,17 @@ This file contains the list of deliverables for COMP 122. Such deliverables incl
    - Invitation URL: https://classroom.github.com/a/g4fW0k44
    - Due Date: Oct 23 23:59 PDT
  
+1. Name: Binary Addition
+   - Status: Released
+   - Deliverable ID: 24-
+   - Invitation URL: https://classroom.github.com/a/6jrqySPT
+   - Due Date: Nov 10 23:52 PDT 
+
 1. Name: Bitwise Operations
    - Status: Unassigned
    - Deliverable ID: 24-
-   - Invitation URL: 
-   - Due Date: 
-
-1. Name: Binary Addition
-   - Status: Unassigned
-   - Deliverable ID: 25-
-   - Invitation URL: 
-   - Due Date: 
+   - Invitation URL:
+   - Due Date:
 
 
 ---
