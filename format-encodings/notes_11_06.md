@@ -37,10 +37,11 @@
 
   1. Lab: 
      * Pick up where we leave off
-
+     * Base64
 
 ## Questions from Last Lecture/Lab, etc.:
    * M/W
+     - 
 
    * T/R
 
@@ -53,7 +54,7 @@
    1. Walk through of the 44-nextInt Spec
       1. Base 2 to Base 10
 
-         - Pattern:
+         - Pattern: 101
 
        |   v   | = |   v   | * base + | digit_10 | glyph | code |
        |------:|:-:|------:|:--------:|---------:|:-----:|:----:|
@@ -131,7 +132,11 @@
         // The return value is a void.
         ```
 
-     * A.length and A.indexOf into MIPS
+     1. nextInt Spec
+        - echo subroutine
+
+
+     1. A.length and A.indexOf into MIPS
        - A.length
          ```java
          for(i=0;   ; i++){
@@ -184,6 +189,7 @@
 # Today's Lab Material
 
   1. Pickup where we leave off
+  1. Base64?
 
 
 ---
