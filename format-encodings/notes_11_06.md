@@ -1,4 +1,4 @@
-# COMP122 Lecture Notes: Nov 05, 2024
+# COMP122 Lecture Notes: Nov 06, 2024
 
 ## Announcements:
 
