@@ -156,21 +156,22 @@ This file contains the list of deliverables for COMP 122. Such deliverables incl
    - Due Date: Oct 11 23:59 PDT
 
 1. Assignment: Checksum
-   - Status: Assigned
+   - Status: Closed
    - Deliverable ID: 42-
    - Invitation URL: https://classroom.github.com/a/l7xqHwlp
    - Due Date: Oct 17 23:59 PDT
 
 1. Assignment: binary32 
-   - Status: Assigned
+   - Status: Closed
    - Deliverable ID: 43-
    - Invitation URL: https://classroom.github.com/a/rPUz3Z0h
    - Due Date: Oct 27 23:59 PDT
 
 
 1. Name: nextInt (atoi)
-   - Status: Unassigned
+   - Status: Assigned
    - Deliverable ID: 44-
-   - Invitation URL: 
-   - Due Date: 
+   - Invitation URL: https://classroom.github.com/a/HaJo4HOr
+   - Due Date: Nov 17 23:59 PDT
+
 

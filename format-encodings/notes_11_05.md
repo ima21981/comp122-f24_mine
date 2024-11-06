@@ -5,6 +5,13 @@
    1. No class on Monday, Nov 11
       - Veterans Day
 
+   1. git clone  \*/code\*.git
+      - You might have gotten a permission error
+      - Your really executing `my_git clone`
+      - A bug, which has subsequently been fixed, was introduced
+      - Why, `my_git clone` does an immediate commit and push to the repo.
+      - Why, because github classroom change their model for creating repos.
+
    1. Name: nextInt (atoi)
       - Status: Assigned
       - Deliverable ID: 44-
@@ -16,7 +23,6 @@
           - the solution, and
           - the associated material
 
-  
 
 ## Today's Agenda:
 
@@ -45,7 +51,36 @@
 # Today's Lecture Material
 
    1. Walk through of the 44-nextInt Spec
-      1. Base N to Base 10 Examples:
+      1. Base 2 to Base 10
+
+         - Pattern:
+
+       |   v   | = |   v   | * base + | digit_10 | glyph | code |
+       |------:|:-:|------:|:--------:|---------:|:-----:|:----:|
+       |   1   | = |   0   | * 2    + |     1    |  1    |  1   |
+       |   2   | = |   1   | * 2    + |     0    |  0    |  0   |
+       |   5   | = |   2   | * 2    + |     1    |  1    |  1   |
+
+       Answer: 5 
+
+       ```java
+       public static int binary2int () {
+
+         int number;
+         int digit;
+
+           digit = bit2int();
+           number=0;
+           for(; digit != -1; ) {
+             number = (number <<  1) + digit ; 
+             digit = bit2int();
+           }
+       
+           return number;
+       }
+       ```
+
+      1. Base 16 to Base 10:
          - 16#   3C2 
 
            |   v   | = |   v   | * 16   + | digit_10 | glyph | code |
@@ -64,7 +99,7 @@
       
           digit = glyph2int(radix);
           for(number=0; digit != -1 ;) {
-            number = (number * radix) + digit ; 
+            number = number * radix + digit ; 
             digit = glyph2int(radix);
           }
       
