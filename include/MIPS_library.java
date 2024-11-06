@@ -79,8 +79,8 @@ class MIPS_library {
 //# | print_s          |  4   | void ƛ(&str);         |
 //# | print_si         |  4   | void ƛ(label);        |
 //# | read_d           |  5   | int  ƛ(void);         |
-//# | read_s           |  8   | int  ƛ(&str, int);    |
-//# | read_si          |  8   | int  ƛ(&str, imm);    |
+//# | read_s           |  8   | void ƛ(&str, int);    |
+//# | read_si          |  8   | void ƛ(&str, imm);    |
 //# | sbrk (allocate)  |  9   | &buffer ƛ(int);       |
 //# | sbrki (allocate) |  9   | &buffer ƛ(imm);       |
 //# | exit (w/o value) | 10   | void exit(void);      |
@@ -109,8 +109,8 @@ class MIPS_library {
 //#
 //# | read_d           |  5   | int  ƛ(void);         |
 //# | read_c           | 12   | byte ƛ(void);         |
-//# | read_s           |  8   | int  ƛ(&str, int);    |
-//# | read_si          |  8   | int  ƛ(&str, int);    |
+//# | read_s           |  8   | void ƛ(&str, int);    |
+//# | read_si          |  8   | void ƛ(&str, int);    |
 
 
   public static void read_d() {
@@ -139,16 +139,15 @@ class MIPS_library {
     String str;
     char [] temp;
 
-    str = stdin.nextLine();
+    str = stdin.nextLine() + "\n";
     temp = str.toCharArray();
 
     for (int i=0; i< str.length(); i++) {
        A[i] = temp[i];
     }
 
-    // validate this...
+    // Does not return a value, hence $v0 == $v0
     $v0 = $v0;
-    $v0 = str.length();
   }
   public static void read_si(char [] A, int count) {
     read_s(A, count);

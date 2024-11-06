@@ -15,8 +15,8 @@
 //# | print_s          |  4   | void ƛ(&str);         |
 //# | print_si         |  4   | void ƛ(label);        |
 //# | read_d           |  5   | int  ƛ(void);         |
-//# | read_s           |  8   | int  ƛ(&str, int);    |
-//# | read_si          |  8   | int  ƛ(&str, imm);    |
+//# | read_s           |  8   | void ƛ(&str, int);    |
+//# | read_si          |  8   | void ƛ(&str, imm);    |
 //# | sbrk (allocate)  |  9   | &buffer ƛ(int);       |
 //# | sbrki (allocate) |  9   | &buffer ƛ(imm);       |
 //# | exit (w/o value) | 10   | void exit(void);      |
@@ -45,8 +45,8 @@
 //#
 //# | read_d           |  5   | int  ƛ(void);         |
 //# | read_c           | 12   | byte ƛ(void);         |
-//# | read_s           |  8   | int  ƛ(&str, int);    |
-//# | read_si          |  8   | int  ƛ(&str, int);    |
+//# | read_s           |  8   | void ƛ(&str, int);    |
+//# | read_si          |  8   | void ƛ(&str, int);    |
 
 
   public static void read_d() {
@@ -70,7 +70,6 @@
   //   character read, and then string is then padded with a null character ('\0').
   //   If n = 1, input is ignored, and a null byte written to the buffer.
   //   If n <=1, input is ignored, and nothing is written to the buffer.
-  // $v0 defines the actual number of bytes read
   public static void read_s(char [] A, int count) {
     String str;
     char [] temp;
@@ -82,9 +81,8 @@
        A[i] = temp[i];
     }
 
-    // validate this...
+    // Does not return a value, hence $v0 == $v0
     $v0 = $v0;
-    $v0 = str.length();
   }
   public static void read_si(char [] A, int count) {
     read_s(A, count);

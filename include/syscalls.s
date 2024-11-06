@@ -54,8 +54,8 @@
 # | print_s          |  4   | void ƛ(&str);         |
 # | print_si         |  4   | void ƛ(label);        |
 # | read_d           |  5   | int  ƛ(void);         |
-# | read_s           |  8   | int  ƛ(&str, int);    |
-# | read_si          |  8   | int  ƛ(&str, imm);    |
+# | read_s           |  8   | void ƛ(&str, int);    |
+# | read_si          |  8   | void ƛ(&str, imm);    |
 # | sbrk (allocate)  |  9   | &buffer ƛ(int);       |
 # | sbrki (allocate) |  9   | &buffer ƛ(imm);       |
 # | exit (w/o value) | 10   | void exit(void);      |
@@ -83,8 +83,8 @@
 # Macros that perform input from stdin
 # | read_d           |  5   | int  ƛ(void);         |
 # | read_c           | 12   | byte ƛ(void);         |
-# | read_s           |  8   | int  ƛ(&str, int);    |
-# | read_si          |  8   | int  ƛ(&str, int);    |
+# | read_s           |  8   | void ƛ(&str, int);    |
+# | read_si          |  8   | void ƛ(&str, int);    |
 
 
 .macro read_d()
@@ -107,7 +107,6 @@
         #   character read, and then string is then padded with a null character ('\0').
         #   If n = 1, input is ignored, and a null byte written to the buffer.
         #   If n <=1, input is ignored, and nothing is written to the buffer.
-        # $v0 defines the actual number of bytes read
 
         nop                     # read_s: reads a string (%s) from stdin
         push $a0, $a1           #    preserve registers
@@ -125,7 +124,6 @@
         #   character read, and then string is then padded with a null character ('\0').
         #   If n = 1, input is ignored, and a null byte written to the buffer.
         #   If n <=1, input is ignored, and nothing is written to the buffer.
-        # $v0 defines the actual number of bytes read
 
         nop                     # Reads from stdin, a string (%s)
         move $a0, %reg1         #   &buffer:   the address of the input buffer
