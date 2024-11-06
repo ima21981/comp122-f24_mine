@@ -108,7 +108,7 @@ Note that sometimes there is not a 100% direct correlation between your JAVA TAC
   |                               | `sb x, 0(a)`              |
   |                               |                           |
   | `p = & A;`                    | `la p, A`                 |
-  | `x = (* p);`                  | `lb x, 0(p)`              |
+  | `x = (* p);`                  | `lbu x, 0(p)`             |
   | `(* p) = x;`                  | `sb x, 0(p)`              |
   |   
 

@@ -103,12 +103,12 @@ Note that sometimes there is not a 100% direct correlation between your JAVA TAC
   |-------------------------------|---------------------------|
   |                               |                           |
   | `x = A[imm];`                 | `la p, A`                 |
-  |                               | `lb x, imm(p)`            |
+  |                               | `lbu x, imm(p)`           |
   |                               |                           |
   |                               |                           |
   | `x = A[v];`                   | `la p, A`                 |
   |                               | `add p, p, v`             |
-  |                               | `lb x, 0(p)`              |
+  |                               | `lbu x, 0(p)`             |
   |                               |                           |
   | `A[imm] = x;`                 | `la p, A`                 |
   |                               | `sb x, imm(p)`            |
@@ -118,7 +118,7 @@ Note that sometimes there is not a 100% direct correlation between your JAVA TAC
   |                               | `sb x, 0(a)`              |
   |                               |                           |
   | `p = & A;`                    | `la p, A`                 |
-  | `x = (* p);`                  | `lb x, 0(p)`              |
+  | `x = (* p);`                  | `lbu x, 0(p)`             |
   | `(* p) = x;`                  | `sb x, 0(p)`              |
   |   
 
