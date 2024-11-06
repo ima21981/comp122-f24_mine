@@ -1,4 +1,4 @@
-# COMP122 Lecture Notes: October 30, 2024
+# COMP122 Lecture Notes: November 03, 2024
 
 ## Announcements:
 
@@ -270,7 +270,12 @@
      char [] buffer = new char[256];
 
      mips.read_s(buffer, 256);
-     buffer_length = mips.retval(); 
+        // Follows semantics of UNIX 'fgets'.  
+        //   Reads at most n-1 characters. A newline ('\n') is placed in the last
+        //   character read, and then string is then padded with a null character ('\0').
+        //   If n = 1, input is ignored, and a null byte written to the buffer.
+        //   If n <=1, input is ignored, and nothing is written to the buffer.
+        // $v0 defines the actual number of bytes read
      ```
 
   1. Macros for ASCII Chars (https://www.javatpoint.com/java-string-touppercase)
