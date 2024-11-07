@@ -150,7 +150,7 @@ Note that sometimes there is not a 100% direct correlation between your JAVA TAC
   [^ C TAC: These instruction can be used to do pointer walking.]
 
 
-### Comparision Mappings: (`<comp>` --> `<! comp>`)
+### Comparison Mappings: (`<comp>` --> `<! comp>`)
 
   | `TAC <comp>` | `MIPS <comp>` | `MIPS <! comp>` |`TAC <! comp>` |
   |:------------:|:-------------:|:---------------:|:-------------:|
