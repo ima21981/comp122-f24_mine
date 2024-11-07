@@ -43,6 +43,7 @@
      - 
 
    * T/R
+     - 
 
 
 ## Any Review?
@@ -57,9 +58,9 @@
 
        |   v   | = |   v   | * base + | digit_10 | glyph | code |
        |------:|:-:|------:|:--------:|---------:|:-----:|:----:|
-       |   1   | = |   0   | * 2    + |     1    |  1    |  1   |
-       |   2   | = |   1   | * 2    + |     0    |  0    |  0   |
-       |   5   | = |   2   | * 2    + |     1    |  1    |  1   |
+       |   1   | = |   0   | * 2    + |     1    |  '1'  |  1   |
+       |   2   | = |   1   | * 2    + |     0    |  '0'  |  0   |
+       |   5   | = |   2   | * 2    + |     1    |  '1'  |  1   |
 
        Answer: 5 
 
@@ -135,8 +136,8 @@
         - echo subroutine
 
 
-     1. A.length and A.indexOf into MIPS
-       - A.length
+     1. A.length() and A.indexOf() into MIPS
+       - A.length()
          ```java
          for(i=0;   ; i++){
             if (A[i] == '\0') break;
@@ -159,7 +160,7 @@
 
          - mips version: see format-encodings/length.s
 
-       - A.indexOf
+       - A.indexOf()
          ```java        
          match:  for(i=0; ; i++) {
                    v = A[i];
