@@ -37,7 +37,6 @@
 
   1. Lab: 
      * Pick up where we leave off
-     * Base64
 
 ## Questions from Last Lecture/Lab, etc.:
    * M/W
@@ -189,11 +188,41 @@
 # Today's Lab Material
 
   1. Pickup where we leave off
-  1. Base64?
 
 
 ---
 ## Resources
+
+  1. Example Coding: Java --> Java Tac --> mips
+     1. C = A.concat(B):    
+        * implemented
+          ```java
+          static char[] A;
+          static char[] B;
+          public static int concat()
+          ```
+        * resulting string printed to stdout:  mips.print_si(C)
+        * see practicum/code_10_06M
+     1. C = A.toUpper();
+        * implemented
+          ```java
+          static char[] A;
+          public static int toUpper(char[] A);
+          ```
+        * resulting string printed to stdout:  
+          ```mips
+          la $t9, C
+          mips.print_s(C)
+          ```
+        * see practicum/code_10_06A
+
+     1. A.compareTo(B):
+        * implemented  
+        ```java
+        static char[] B;
+        int compareTo(char[] A);
+        ```
+        * see practicum/code_10_07
 
 
 ---
