@@ -89,6 +89,16 @@ Note that sometimes there is not a 100% direct correlation between your JAVA TAC
 
 ### Array Operations with non-Java Pointer Operations
 
+ 1. For static arrays
+
+  | TAC Array Equations           | MIPS Instruction          |
+  |-------------------------------|---------------------------|
+  |                               |                           |
+  | `x = A[v];`                   | `lbu x A(v)`              |
+  |                               |                           |
+  | `A[v] = x;`                   | `sb x, A(v)`              |
+
+
   | TAC Array Equations           | MIPS Instruction          |
   |-------------------------------|---------------------------|
   |                               |                           |
@@ -97,7 +107,7 @@ Note that sometimes there is not a 100% direct correlation between your JAVA TAC
   |                               |                           |
   |                               |                           |
   | `x = A[v];`                   | `la p, A`                 |
-  |                               | `add p, p, v`             | 
+  |                               | `add p, p, v`             |
   |                               | `lbu x, 0(p)`             |
   |                               |                           |
   | `A[imm] = x;`                 | `la p, A`                 |
@@ -105,12 +115,39 @@ Note that sometimes there is not a 100% direct correlation between your JAVA TAC
   |                               |                           |
   | `A[v] = x;`                   | `la p, A`                 |
   |                               | `add p, p, v`             |
-  |                               | `sb x, 0(a)`              |
+  |                               | `sb x, 0(p)`              |
+
+  1. For registers arrays:
+     - the address of A is already located in a register
+     - &A don't the register that contains the address of A
+
+  | TAC Array Equations           | MIPS Instruction          |
+  |-------------------------------|---------------------------|
+  |                               |                           |
+  | `x = A[imm];`                 | `move p, &A`              |
+  |                               | `lbu x, imm(p)`           |
+  |                               |                           |
+  |                               |                           |
+  | `x = A[v];`                   | `move p, &A`              |
+  |                               | `add p, p, v`             |
+  |                               | `lbu x, 0(p)`             |
+  |                               |                           |
+  | `A[imm] = x;`                 | `move p, &A`              |
+  |                               | `sb x, imm(p)`            |
+  |                               |                           |
+  | `A[v] = x;`                   | `move p, &A`              |
+  |                               | `add p, p, v`             |
+  |                               | `sb x, 0(p)`              |
+
+
+  | C TAC Array Equations         | MIPS Instruction          |
+  |-------------------------------|---------------------------|
   |                               |                           |
   | `p = & A;`                    | `la p, A`                 |
   | `x = (* p);`                  | `lbu x, 0(p)`             |
   | `(* p) = x;`                  | `sb x, 0(p)`              |
   |   
+  [^ C TAC: These instruction can be used to do pointer walking.]
 
 
 ### Comparision Mappings: (`<comp>` --> `<! comp>`)
