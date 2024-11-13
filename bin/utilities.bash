@@ -1,7 +1,7 @@
 #! /bin/bash
 
 # Potentially make a file for
-#  submmission_support.bash
+#  submission_support.bash
 #
 function newline_check () {
   FILE="$1"
