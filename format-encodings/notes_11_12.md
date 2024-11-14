@@ -15,11 +15,11 @@
          - homework assignments
          - lecture material
          - concepts covered by programming assignments
-      - DRES accomodations: see me
+      - DRES accommodations: see me
 
    1. Quiz 30-
       - Follow the process, it is part of the quiz
-      - Released at 18:59 PST on Dec 7 (Friday)
+      - Released at 18:59 PST on Dec 6 (Friday)
         * URL Invitation link posted on #fitzgerald-f24
       - Closed at 23:59 PST on Dec 8 (Sunday)
       - Time limit: 60 minutes.
@@ -44,16 +44,50 @@
 
 ## Questions from Last Lecture/Lab, etc.:
    * M/W
-     - 
+     - none
 
    * T/R
-     - 
+     - none
 
 
 ## Any Review?
 
 ---
 # Today's Lecture Material
+
+  1. Binary Numbers and Binary Encodings Recap
+     - 8# - 752, - 0752, - 0o752,
+       - 2# - 000 111 101 010
+       -      111 000 010 101  // 1's complement
+       -      111 000 010 110  // 2's complement
+       -      not applicable   // binary encoding
+
+     - 4# + 32103
+       - 2# 00 00 00 11 10 01 00 11               
+       -    00 00 00 11 10 01 00 11   // 1's complement
+       -    00 00 00 11 10 01 00 11   // 2's complement
+       -    00 00 00 11 10 01 00 11   // binary encoding
+
+     - 16# - 7F2.3A
+       - 2#  - 0111 1111 0010 . 0011 1010
+       -     - 01 . 11 1111 0010 0011 1010  x 2^1010    // 10
+       - binary32:
+         - pattern: | s | eeee eeee | mmmm mmmm mmmm mmmm mmmm mmm |
+         - sign:  '-' ->  1
+         - mantissa: 1111 1100 1000 1110 1000 000
+           - . 11 1111 0010 0011 1010 0000 0
+           - ^ implicit
+         - exponent: 10 + 127 == 137 
+           ```
+            0 1111 1100
+              0111 1111
+           +  0000 1010
+              ---------
+              1000 1001      Notice: 128 + (10 - 1)
+            ```
+      - pattern:  | s | eeee eeee | mmmm mmmm mmmm mmmm mmmm mmm |
+      - encoding: | 1 | 1000 1001 | 1111 1100 1000 1110 1000 000 |
+
 
   1. Binary Numbers and Binary Encodings Recap
      -  16# - 45   //  a negative base 16 integer
@@ -79,7 +113,7 @@
                   0111 1111
                 + 0000 0110
                 -----------
-                  1000 0101
+                  1000 0101        # Notice: 128 + (6 - 1)
              ```  
           - mantissa     .0001 0111 1111 1000 0000 000       
             *            ^  implicit radix point
@@ -95,7 +129,7 @@
      - $ printf "%x\n" $(ascii.index \*)
      - $ base64_char 63
 
-     - format_encodings/slide_presentations/base64-encoding.pdf
+     - format-encodings/slide_presentations/base64-encoding.pdf
 
 
 # Today's Lab Material
