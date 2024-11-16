@@ -6,7 +6,7 @@ The conditional statement is common to every programming language. It allows one
 
 ## The 'if then' Statement
 
-In the simpliest form, there is only one code block--and this form is refered to simply as an if-then statement.  "If" the given Boolean expression is TRUE, "then" the code block is executed.  The following is an example in Java:
+In the simplest form, there is only one code block--and this form is refered to simply as an if-then statement.  "If" the given Boolean expression is TRUE, "then" the code block is executed.  The following is an example in Java:
 
   ```java
   if (a <= b) {
@@ -17,7 +17,7 @@ In the simpliest form, there is only one code block--and this form is refered to
 ## The 'if then else' Statement
 
 We can extend this statement to provide two code blocks.  In this form, the second code block is executed, as an alternative, when the preceeding Boolean expression is FALSE.  The two code blocks are typically named:
-  1. the consquence code block, or simply the `cons`
+  1. the consequence code block, or simply the `cons`
   1. the alternative code block, or simply the `alt` 
 
 The `cons` block is executed whenever the Boolean expression is evaluated as TRUE, alternatively the `alt` block is executed. 
@@ -115,18 +115,18 @@ In the second form, we altered the programming style make the "else if" appear a
               x = 3;
               break cond; 
             }
-            else if (a == '2') {
-  next_1:     ;
+            else 
+  next_1:   if (a == '2') {
               x = 2;
               break cond;
             }     
-            else if (a == '1') {
-  next_2:     ;
+            else 
+  next_2:   if (a == '1') {
               x = 1;
               break cond;
             }     
-            else if (a == '0') {
-  next_3:     
+            else 
+  next_3:   if (a == '0') {  
               x = 0;
               break cond;
             }     
@@ -174,6 +174,20 @@ Consider the following code template:
       1. Append 'break {cond};' at the end of the code block.
       1. Transform the code within the code block to conform to the TAC style.
 
+   1. For each of the following `else if` keyword pairs:
+      1. Split the `else if` keyword pair onto separate lines
+      1. Associate the {next_n} label with the `if` keyword
+         - where "n" in the label is the number of the code block from 0..N-1.
+      1. Append 'break {cond};' at the end of the code block.
+      1. Transform the code within the code block to conform to the TAC style.
+ 
+   1. For the final `else` code block
+      1. Insert the {next_n} label, with a null statement, at top of the block.
+         - where "n" in the label is the number of the code block from 0..N-1.
+      1. Append 'break {cond};' at the end of the code block.
+      1. Transform the code within the code block to conform to the TAC style.
+
+
    1. After the last code block, and before the {done} label, add the {next_n} label.
       - where "n" is the equal to then number of code blocks.
 
@@ -202,15 +216,14 @@ Applying the above algorithm results in the following template:
                  <consequence block>
                  break cond;
                }
-               else if (<test 1>) { 
-   next_1:       ;  
+               else 
+   next_1:     if (<test 1>) { 
                  <alternative block 1>
                  break cond;
                }
                ...
-               
-               else if (<test n-2>) {
-   next_n-2:   ;
+               else
+   next_n-2:   if (<test n-2>) {
                  <alternative block n-2>
                  break cond;
                }
@@ -219,7 +232,7 @@ Applying the above algorithm results in the following template:
                  <alternative block n-1>
                  break cond;
                }
-   next_n:   ;
+   next_n:     ;
    done:       ;
    ```
 
