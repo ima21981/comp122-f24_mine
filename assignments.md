@@ -156,7 +156,7 @@ This file contains the list of deliverables for COMP 122. Such deliverables incl
    - Due Date: Oct 11 23:59 PDT
 
 1. Assignment: Checksum
-   - Status: Closed
+   - Status: Graded 11/17
    - Deliverable ID: 42-
    - Invitation URL: https://classroom.github.com/a/l7xqHwlp
    - Due Date: Oct 17 23:59 PDT
