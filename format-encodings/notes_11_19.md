@@ -26,6 +26,19 @@
 ---
 # Today's Lecture Material
 
+  1. Time to Solve a problem:
+     - add two numbers together?
+     - search for an item in a list?
+     - search for an item in an ordered list?
+     - sort a list of items?
+       - Bucket List
+       - Bubble List
+       - QuickSort
+       - MergeSort
+    - add two matrices?
+    - multiple two matrices?
+
+
   1. Big 0 notation
      ```gnuplot
      log2(n) = log(n)/log(2)
