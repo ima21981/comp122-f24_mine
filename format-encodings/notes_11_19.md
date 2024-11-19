@@ -1,29 +1,17 @@
 # COMP122 Lecture Notes: Nov 19, 2024
 
 ## Announcements:
-   1. None
+   1. 40- assignment decided
+      - formal presentation next Lab
+      - you can get a head start today
+
+   1. Today's material is NOT covered on 20-
+
 
 ## Today's Agenda:
-
-## Questions from Last Lecture/Lab, etc.:
-   * M/W
-     - none
-
-   * T/R
-     - none
-
-
-## Any Review?
-
----
-
-## Today's Agenda:
-   1. Syscalls for reading aggregate data
-
    1. Big 0 notation
 
    1. Multiplication
-
 
 
 ## Questions from Last Lecture/Lab, etc.:
@@ -33,18 +21,10 @@
    * T/R 
      - none
 
+## Any Review?
 
 ---
 # Today's Lecture Material
-
-   1. Review Syscalls for reading aggregate data
-      -  bytes_read = read_s(buffer, bytes_requested)
-      -  bytes_read = read(fd, buffer, bytes_requested)
-
-         - bytes_read:  if < 0, error
-         - bytes_read:  if == 0, no more data to read
-         - bytes_read:  if <= bytes_read, success
-
 
   1. Big 0 notation
      ```gnuplot
@@ -71,7 +51,6 @@
      x = x * 16;   x = x << 4;
 
      x = x * 10;   x = 8*x + 2*x;   x = (x << 3) + (x << 1 )
-
      ```
 
   1. Multiplication
@@ -206,12 +185,100 @@
        - mult, div, rem, etc.
 
 # Today's Lab Material
-  - play with utf8 and/or base64
-  
+  1. Get a head start on 40-
 
+  1. Create a file, 'play.j' with four methods
+     1. public static int loop1();
+     1. public static int loop2();
+     1. public static int required_bytes();
+     1. public static int bytes_to_read();
+
+  1. Initial Specification
+     1. loop1:  
+        - reads a list of hex values from stdin
+          * Stops when you read the value -1
+          * validates each value is in the range 0..0x10FFFF 
+          - performs the main task
+        - returns
+          -  0  if all are in the correct range
+          - -1 if if NOT all are in the correct range
+      
+     1. loop2:
+        - Same as loop2 but for values in the range 0..2^8-1
+        
+        
+     1. required_bytes():
+        - copy the pos_msb code from a previous assignment
+        - refactor the code to return the number of required bytes
+          * recall p is the value returned by pos_msb
+      
+            | Condition | l = length | b = bytes |
+            |-----------|-----------:|----------:|
+            | p <= 7    |        7   |      1    |
+            | p <= 11   |       11   |      2    |
+            | p <= 16   |       16   |      3    |
+            | p <= 21   |       21   |      4    |
+        
+      
+     1. bytes_to_read():
+      
+        | Condition               | b = bytes |
+        |----------- -------------|----------:|
+        | 0x0000 <= v <=     0x7F |     1     |
+        | 0x0080 <= v <=    0x7FF |     2     |
+        | 0x0800 <= v <=   0xFFFF |     3     |
+        | 0x1000 <= v <= 0x10FFFF |     4     |
+
+  1. Write some test cases for bytes_to_read() and required_bytes:
+     - cat bytes_to_read.sth_case
+       ```
+       [default]
+       DRIVER=java_subroutine
+       OPTIONS="-L play.j"
+       ENTRY=bytes_to_read
+
+       [case]
+       ARGS="0"
+       EXIT_STATUS=1
+       ```
+
+     - cat required_bytes.sth_case
+       ```
+       [default]
+       DRIVER=java_subroutine
+       ENTRY=required_bytes
+       OPTIONS="-L play.j"
+
+       [case]
+       ARGS="0x08FF"
+       EXIT_STATUS=3
+       ```
+
+  1. Get ready to have test cases for the methods morphed from loop1() and loop2():
+     - cat loop1.sth_case
+       ```
+       [default]
+       DRIVER=java_subroutine
+       ENTRY=loop1
+       OPTIONS="-L play.j"
+
+       [case]
+       INPUT="loop1.input"
+       EXIT_STATUS=0
+       ```
+
+     - cat loop1.input
+       ```
+       10FFFF 
+       ABA
+       A2
+       -1
+       ```
+  
 ---
 ## Resources
 
+   * format-encodings/slide_presentations/multiplication.pdf
 
 ---
 <!-- This section for student's to place their own notes. -->
