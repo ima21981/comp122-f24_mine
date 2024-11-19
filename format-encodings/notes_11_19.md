@@ -23,6 +23,21 @@
 
 ## Any Review?
 
+   - Arrays in MIPS
+     - java: x = A[5];  C: x = A[5];
+     - Ada : x = A(5);
+     - C:  A[5] == 5[A] == &A + 5 == 5 + &A
+     - MIPS   
+       ```
+       move $t0, $a0
+       la $t0, A     # &A  lval(A)
+       5($t0)
+       ```
+
+    - X= pos_msb(a, b, c)  --> call pos_msb a b c
+                               move X, $v0 
+
+
 ---
 # Today's Lecture Material
 
@@ -198,13 +213,19 @@
        - mult, div, rem, etc.
 
 # Today's Lab Material
+
+  1. Using a register as a stack!
+     - empty:  $t0 == 0
+     - pop:    b = $t0 & 0x01, $t0 = $t0 >>> 1
+     - push:   $t0 = $t0 << 1, $t0 = $t0 | b
+
   1. Get a head start on 40-
 
   1. Create a file, 'play.j' with four methods
      1. public static int loop1();
      1. public static int loop2();
-     1. public static int required_bytes();
-     1. public static int bytes_to_read();
+     1. public static int required_bytes(int value);
+     1. public static int bytes_to_read(int value);
 
   1. Initial Specification
      1. loop1:  
@@ -220,7 +241,7 @@
         - Same as loop2 but for values in the range 0..2^8-1
         
         
-     1. required_bytes():
+     1. required_bytes(value):
         - copy the pos_msb code from a previous assignment
         - refactor the code to return the number of required bytes
           * recall p is the value returned by pos_msb
@@ -233,7 +254,7 @@
             | p <= 21   |       21   |      4    |
         
       
-     1. bytes_to_read():
+     1. bytes_to_read(v):
       
         | Condition               | b = bytes |
         |----------- -------------|----------:|
