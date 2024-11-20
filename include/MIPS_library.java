@@ -226,11 +226,11 @@ class MIPS_library {
 
 
   public static void print_x(int register) {
-    System.out.printf("%x", register);
+    System.out.printf("0x%08x", register);
     return;
   }
   public static void print_xi(int immediate  ) {
-    System.out.printf("%x", immediate);
+    System.out.printf("0x%08x", immediate);
     return;
   }
 
