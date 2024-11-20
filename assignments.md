@@ -29,7 +29,7 @@ This file contains the list of deliverables for COMP 122. Such deliverables incl
    - Invitation URL: https://classroom.github.com/a/pHmEC8eh
 
 1. Exam 2: Formats and Encodings
-   - Status: Unassigned
+   - Status: Active
    - Additional Information: 
    - Deliverable ID: 20-
    - Invitation URL: (provided in class)
@@ -40,14 +40,14 @@ This file contains the list of deliverables for COMP 122. Such deliverables incl
    - Additional Information: 
      - structure and format is the same as Quiz #1
    - Deliverable ID: 30-
-   - Invitation URL: 
-   - Due Date: 
+   - Invitation URL: TBD
+   - Due Date: Sunday, Dec 8 23:59 PST
 
 1. Exam 4: MIPS Assembly Language
-   - Status: Unassigned
+   - Status: Assigned
    - Deliverable ID: 40-
-   - Invitation URL:
-   - Due Date: Sunday, Dec 15 23:59 PDT
+   - Invitation URL: https://classroom.github.com/a/R_Nw2T44
+   - Due Date: Tuesday, Dec 10 23:59 PST
 
 
 ---
@@ -169,7 +169,7 @@ This file contains the list of deliverables for COMP 122. Such deliverables incl
 
 
 1. Name: nextInt (atoi)
-   - Status: Assigned
+   - Status: Closed
    - Deliverable ID: 44-
    - Invitation URL: https://classroom.github.com/a/HaJo4HOr
    - Due Date: Nov 17 23:59 PDT
