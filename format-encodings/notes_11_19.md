@@ -243,7 +243,7 @@
         
      1. required_bytes(value):
         - copy the pos_msb code from a previous assignment
-        - refactor the code to return the number of required bytes
+        - refactor the code to return the number of required bytes, b
           * recall p is the value returned by pos_msb
       
             | Condition | l = length | b = bytes |
@@ -257,11 +257,12 @@
      1. bytes_to_read(v):
       
         | Condition               | b = bytes |
-        |----------- -------------|----------:|
+        |-------------------------|----------:|
         | 0x0000 <= v <=     0x7F |     1     |
         | 0x0080 <= v <=    0x7FF |     2     |
         | 0x0800 <= v <=   0xFFFF |     3     |
         | 0x1000 <= v <= 0x10FFFF |     4     |
+        | otherwise               |    -1     |        
 
   1. Write some test cases for bytes_to_read() and required_bytes:
      - cat bytes_to_read.sth_case
@@ -306,7 +307,7 @@
        10FFFF 
        ABA
        A2
-       -1
+       FFFFFFFF
        ```
   
 ---
