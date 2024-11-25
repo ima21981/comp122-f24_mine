@@ -9,7 +9,7 @@
 
 
 ## Today's Agenda:
-   1. Big 0 notation
+   1. Big O notation
 
    1. Multiplication
 
@@ -54,7 +54,7 @@
     - multiple two matrices?
 
 
-  1. Big 0 notation
+  1. Big O notation
      ```gnuplot
      log2(n) = log(n)/log(2)
      plot [x=0:8][y=0:8] x              # O(n)       Search a list
