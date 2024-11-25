@@ -16,7 +16,8 @@
 
 
 ## Questions from Last Lecture/Lab, etc.:
-   * M/W 
+   * M/W
+     - Can we use a modified algorithm for 40-? Yes! 
 
    * T/R 
 
@@ -29,7 +30,7 @@
      - Branch: `b{cond} $reg0, $reg1, label`
        -  conditional, relative change in the PC
          * `b label` :  `beq $zero, $zero, label`
-      - label is encoded as +/- 2^16
+      - label is encoded as +/- 2^15
 
      - Jump: `j label`, `jr $reg`, and `jal label`, `jalr $reg`
        - unconditional, absolute change in the PC
@@ -40,13 +41,18 @@
 
      - Defining a macro "name"
      ```
-     .macro name( arg_0, ... arg_n-1)
-     .end macro
+     .macro name()
+     .end_macro
+     .macro name(%arg)
+     .end_macro
+     .macro name( %arg_0, ... %arg_n-1)
+       <code>
+     .end_macro
      ```
 
      - Example Usage:
        ```
-       # average                  # $t0 = ($t1 + t2 ) >> 1;
+       # average                  # $t0 = ($t1 + $t2 ) >> 1;
        average $t0, $t1, $t2      # Used as a pseudo instruction
        average ($t1, $t2)         # Used to mimic a subroutine call
        move $t0, $v0         
@@ -81,12 +87,12 @@
             # a3
             # v0: {return value}
 
-            # t0: value             # int value;
+            # t
+            ..0: value             # int value;
             # t1: result            # int result;
             # t2: ascii_0           # int ascii_0;
             # t3: ascii_1           # int ascii_1;
-
-            ...
+.
             move $v0, result
             jr $ra
  
