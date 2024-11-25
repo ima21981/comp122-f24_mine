@@ -1,4 +1,4 @@
-# COMP122 Lecture Notes: Nov 24, 2024
+# COMP122 Lecture Notes: Nov 25, 2024
 
 ## Announcements:
    1. M/T : Lecture on Subroutine Construction
