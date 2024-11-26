@@ -123,12 +123,6 @@ This file contains the list of deliverables for COMP 122. Such deliverables incl
    - Invitation URL: https://classroom.github.com/a/6jrqySPT
    - Due Date: Nov 10 23:52 PDT 
 
-1. Name: Bitwise Operations
-   - Status: Unassigned
-   - Deliverable ID: 24-
-   - Invitation URL:
-   - Due Date:
-
 
 ---
 
@@ -137,14 +131,8 @@ This file contains the list of deliverables for COMP 122. Such deliverables incl
 1. Name: Digital-Logic: Practice #1
    - Status: Unassigned
    - Deliverable ID: 31-
-   - Invitation URL: 
-   - Due Date:
-
-1. Name: Digital-Logic: Practice #2
-   - Status: Unassigned
-   - Deliverable ID: 32-
-   - Invitation URL: 
-   - Due Date:
+   - Invitation URL: https://classroom.github.com/a/o-QeWQ0y
+   - Due Date: Dec 6 17:00 PST
 
 ---
 <h3 id="mips">MIPS Programming (Section 4)</h3>
@@ -166,7 +154,6 @@ This file contains the list of deliverables for COMP 122. Such deliverables incl
    - Deliverable ID: 43-
    - Invitation URL: https://classroom.github.com/a/rPUz3Z0h
    - Due Date: Oct 27 23:59 PDT
-
 
 1. Name: nextInt (atoi)
    - Status: Closed
