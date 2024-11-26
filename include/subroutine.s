@@ -1,6 +1,7 @@
 .macro call(%sub, %arg0)
   save_state()
   push $a0
+  nop                   # Don't use "a" registers as arguments
   move $a0, %arg0
   jal %sub
   pop $a0
@@ -10,6 +11,7 @@
 .macro call(%sub, %arg0, %arg1)
   save_state()
   push $a0 $a1
+  nop                   # Don't use "a" registers as arguments
   move $a0, %arg0
   move $a1, %arg1
   jal %sub
@@ -21,6 +23,7 @@
 .macro call(%sub, %arg0, %arg1, %arg2)
   save_state()
   push $a0 $a1 $a2
+  nop                   # Don't use "a" registers as arguments
   move $a0, %arg0
   move $a1, %arg1
   move $a2, %arg2
@@ -31,6 +34,7 @@
 
 
 .macro call(%sub, %arg0, %arg1, %arg2, %arg3)
+  nop                   # Don't use "a" registers as arguments
   save_state()
   push $a0 $a1 $a2 $a3
   move $a0, %arg0
@@ -83,7 +87,7 @@
         nop                     # Marshaling Input Args
         move $a0, %a0           # On MIPS, the first four args are in registers
         move $a1, %a1
-  move $a2, %a2
+        move $a2, %a2
 .end_macro
 .macro marshal_args(%a0,%a1,%a2,%a3)
         nop                     # Marshaling Input Args

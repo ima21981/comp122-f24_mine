@@ -19,9 +19,12 @@
    * M/W
      - Can we use a modified algorithm for 40-? Yes! 
 
-   * T/R 
+   * T/R
+     - will you go over the stack, push and pop?  Maybe...
 
 ## Any Review?
+
+
 
 ---
 # Today's Lecture Material
@@ -43,8 +46,10 @@
      ```
      .macro name()
      .end_macro
+
      .macro name(%arg)
      .end_macro
+
      .macro name( %arg_0, ... %arg_n-1)
        <code>
      .end_macro
@@ -54,6 +59,7 @@
        ```
        # average                  # $t0 = ($t1 + $t2 ) >> 1;
        average $t0, $t1, $t2      # Used as a pseudo instruction
+
        average ($t1, $t2)         # Used to mimic a subroutine call
        move $t0, $v0         
        ```
@@ -87,12 +93,13 @@
             # a3
             # v0: {return value}
 
-            # t
-            ..0: value             # int value;
+            # t0: value             # int value;
             # t1: result            # int result;
             # t2: ascii_0           # int ascii_0;
             # t3: ascii_1           # int ascii_1;
-.
+
+             ...
+
             move $v0, result
             jr $ra
  
