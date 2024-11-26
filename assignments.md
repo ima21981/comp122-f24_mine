@@ -40,6 +40,7 @@ This file contains the list of deliverables for COMP 122. Such deliverables incl
    - Additional Information: 
      - structure and format is the same as Quiz #1
    - Deliverable ID: 30-
+   - Released on Dec 6 17:00 PST
    - Invitation URL: TBD
    - Due Date: Sunday, Dec 8 23:59 PST
 
