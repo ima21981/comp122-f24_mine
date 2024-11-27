@@ -11,6 +11,13 @@
      - Released on Dec 6 17:00 PST
      - Due: Dec 8 23:59 PDT
 
+   1. 40-exam-mips
+      - due Tuesday, Dec 10 23:59 PST
+
+   1. All student repos are to be deleted
+      - December 22, 2024
+      - Copy your repos to build a portfolio 
+
 
 ## This Weeks's Agenda:
    1. Start a new section: Digital Logic
