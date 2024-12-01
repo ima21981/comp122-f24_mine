@@ -4,6 +4,7 @@
   1. Assignment: #3: Digital Logic (31-digital-logic  )
      - Consider it a practice quiz!
      - Due: Dec 6 17:00 PST
+     - URL: https://classroom.github.com/a/o-QeWQ0y
 
   1. Quiz #3: Digital Logic (30-quiz-digital-logic  )
      - Online Timed Quiz
