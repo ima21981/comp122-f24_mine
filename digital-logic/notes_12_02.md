@@ -23,11 +23,11 @@
 ## This Weeks's Agenda:
    1. Start a new section: Digital Logic
 
-   1. M/W 
+   1. M/T 
       1. Introduction to Digital Logic
       1. Combinational Circuits
 
-   1. T/R
+   1. W/R
       1. Control Lines and the CPU
       1. State and MicroArchitecture
 
