@@ -47,32 +47,26 @@
 
 .macro read_x()
         nop                             # read_d:
-        push $a0, $a1, $a2, $a3
-        la $a0, buffer
+        push $a0, $a1, $a2
+        la $a0, io_line
         move $a1, $zero
         read_si($a0, 255)
         li $a2, 16
+        push $a0, $a1, $a2
         la $gp, buffer
-        lbu $a3, 0($gp)
-        bne $a3, '-', skip1
-          addi $gp, $gp, 1
-skip1:   call i_strtol $gp, $zero, $a2
-        bne $a3, '-', skip2
-          sub $v0, $zero, $v0
-skip2:  pop  $a0, $a1, $a2, $a3
+        call i_strtol $gp, $zero, $a2
         nop                             # read_d: $v0 contains the integer value
 .end_macro
 
 .macro read_t()
         nop                             # read_d:
         push $a0, $a1, $a2
-        la $a0, buffer
+        la $a0, io_line
         read_si($a0, 255)
         move $a1, $zero
         li $a2, 2
         la $gp, buffer
-        call i_strtol $gp, $zero, $a2 
-        push $a0, $a1, $a2
+        call i_strtol $gp, $zero, $a2
         nop                             # read_d: $v0 contains the integer value
 .end_macro
 
@@ -113,7 +107,7 @@ str_label:      .asciiz %string
 
 # prints the bits in position 31..start-end..0
 .data
-buffer:     .space 1024
+buffer:     .space 32
 .text
 
 .macro print_bits(%reg0, %imm1, %imm2)
@@ -647,6 +641,5 @@ buffer:     .space 1024
 ##         
 ## .end_macro
 ## ```
-
 
 
