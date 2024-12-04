@@ -25,7 +25,7 @@ esac
 EXIT_STATUS=0
 
 ### FILE NAME RELATED ENVIRONMENT VARIABLES
-BOOTSTRAP_DIR="."
+BOOTSTRAP_DIR="$(pwd)"
 BOOTSTRAP_FILE="${BOOTSTRAP_DIR}/.bootstrap.${ASM_EXT}"
 
 
@@ -868,8 +868,9 @@ function fix_error_messages () {
   # revised the line number
   PWD_STRING=$(pwd)
 
-  sed -e "s|${PWD_STRING}/||" -e "s|${BOOTSTRAP_DIR}/||"  \
-      -e "s|bootstrap.${ASM_EXT}|${SUB_NAME}.${LANG_EXT}|" | 
+  sed -e "s|${PWD_STRING}/||" |
+  sed -e "s|${BOOTSTRAP_DIR}/||"  |
+  sed -e "s|bootstrap.${ASM_EXT}|${SUB_NAME}.${LANG_EXT}|" | 
     while IFS= read _line ; do    #handle the shift in the line numbers
       _number=$(sed -n "/error:/s|^.*${SUB_NAME}.j:\([0-9][0-9]*\):.*$|\1|p" <<< $_line)
       if [[ -n "$_number" ]] ; then 
