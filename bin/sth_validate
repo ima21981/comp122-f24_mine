@@ -56,26 +56,27 @@ function sth_validate () {
        #   1. the 'global' file
        #   1. a set of test cases: *.sth_case
     for test_case in ${STH_TMPDIR}/*.sth_case ; do
-      source ${STH_TMPDIR}/default
-      source ${test_case}
-      source ${STH_TMPDIR}/global
+      ( source ${STH_TMPDIR}/default
+        source ${test_case}
+        source ${STH_TMPDIR}/global
 
-      # Override Environment Variables with STH specific ENV VARIABLES
-      [[ -n "${STH_DRIVER}"  ]] && DRIVER=${STH_DRIVER}
-      [[ -n "${STH_OPTIONS}" ]] && OPTIONS=${STH_OPTIONS}
-      [[ -n "${STH_ENTRY}"   ]] && ENTRY=${STH_ENTRY}
-      [[ -n "${STH_ARGS}"    ]] && ARGS=${STH_ARGS}
-      [[ -n "${STH_INPUT}"   ]] && INPUT=${STH_INPUT}
-      [[ -n "${STH_OUTPUT}"  ]] && OUTPUT=${STH_OUTPUT}
-      [[ -n "${STH_EXIT_STATUS}" ]] && EXIT_STATUS=${STH_EXIT_STATUS}
+        # Override Environment Variables with STH specific ENV VARIABLES
+        [[ -n "${STH_DRIVER}"  ]] && DRIVER=${STH_DRIVER}
+        [[ -n "${STH_OPTIONS}" ]] && OPTIONS=${STH_OPTIONS}
+        [[ -n "${STH_ENTRY}"   ]] && ENTRY=${STH_ENTRY}
+        [[ -n "${STH_ARGS}"    ]] && ARGS=${STH_ARGS}
+        [[ -n "${STH_INPUT}"   ]] && INPUT=${STH_INPUT}
+        [[ -n "${STH_OUTPUT}"  ]] && OUTPUT=${STH_OUTPUT}
+        [[ -n "${STH_EXIT_STATUS}" ]] && EXIT_STATUS=${STH_EXIT_STATUS}
 
-      # Check that the required VARIABLES are defined
-      { 
-        [[ -z "${ENTRY}" ]]   && { echo "Error: Invalid test in ${f}, missing \"ENTRY\", skipping..."  ; continue; } 
-        [[ -z "${EXIT_STATUS}" ]] && { echo "Error: Invalid test in ${f}, missing \"EXIT_STATUS\" skipping..." ; continue; }
-      } > /dev/stderr
+        # Check that the required VARIABLES are defined
+        { 
+          [[ -z "${ENTRY}" ]]   && { echo "Error: Invalid test in ${f}, missing \"ENTRY\", skipping..."  ; continue; } 
+          [[ -z "${EXIT_STATUS}" ]] && { echo "Error: Invalid test in ${f}, missing \"EXIT_STATUS\" skipping..." ; continue; }
+        } > /dev/stderr
 
-      sth_case_validate
+        sth_case_validate
+      )
       exit_val=$?
       echo > /dev/stderr
 
