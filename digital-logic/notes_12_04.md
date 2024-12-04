@@ -11,6 +11,13 @@
      - Released on Dec 6 17:00 PST
      - Due: Dec 8 23:59 PDT
 
+  1. Next Week's Agenda
+     - Cleanup work -- none
+     - Outstanding Assignments: 40-
+       - Hence, you have lecture/lab time to work on COMP122 20-
+       - You have non lecture/lab time to work on your other classes
+       
+
 ## Today's Agenda:
 
    1. T/R
