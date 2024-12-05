@@ -1,7 +1,7 @@
 # COMP122 Lecture Notes: Dec 4, 2024
 
 ## Announcements:
-  1. Assignment: #3: Digital Logic (31-digital-logic)
+  1. Assignment: #31-: Digital Logic (31-digital-logic)
      - Consider it a practice quiz!
      - Due: Dec 6 17:00 PST
 
